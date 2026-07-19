@@ -259,3 +259,136 @@ h1, h2, h3 { font-family: var(--font-heading); font-weight: 500; line-height: 1.
   text-align: right;
   color: var(--color-text-muted);
 }
+
+/* PARCOURS - Style timeline horizontale type Nicepage */
+.parcours {
+  padding: var(--space-xl) 0;
+  background: var(--color-bg);
+}
+
+.eyebrow--center,
+.section-title--center,
+.section-subtitle--center {
+  text-align: center;
+}
+
+.section-subtitle--center {
+  max-width: 600px;
+  margin: 0 auto var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+.parcours__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+/* Ligne horizontale reliant les étapes */
+.parcours__line {
+  position: absolute;
+  top: 76px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-accent) 0,
+    var(--color-accent) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 0;
+}
+
+.parcours__step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parcours__number {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.parcours__icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.parcours__step:hover .parcours__icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-6px);
+}
+
+.parcours__title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.parcours__text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+/* Effet fade-in au scroll (réutilise ta classe existante) */
+.parcours__step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.parcours__step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Décalage progressif pour effet cascade */
+.parcours__step:nth-child(2) { transition-delay: 0.1s; }
+.parcours__step:nth-child(3) { transition-delay: 0.2s; }
+.parcours__step:nth-child(4) { transition-delay: 0.3s; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .parcours__timeline {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-xl);
+  }
+  .parcours__line {
+    display: none; /* ligne horizontale retirée, trop complexe en grille 2x2 */
+  }
+}
+
+@media (max-width: 560px) {
+  .parcours__timeline {
+    grid-template-columns: 1fr;
+  }
+  .parcours__icon {
+    width: 72px;
+    height: 72px;
+  }
+}

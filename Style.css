@@ -1,0 +1,67 @@
+.contact__map {
+  margin-top: var(--space-xl);
+}
+.contact__map iframe {
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact__horaires {
+  margin-top: var(--space-md);
+}
+.contact__horaires h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+.horaires-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.horaires-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+.horaires-table td:first-child {
+  font-weight: 600;
+  color: var(--color-text);
+}
+.horaires-table td:last-child {
+  text-align: right;
+  color: var(--color-text-muted);
+}
+
+.contact__map {
+  margin-top: var(--space-xl);
+}
+.contact__map iframe {
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact__horaires {
+  margin-top: var(--space-md);
+}
+.contact__horaires h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+.horaires-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.horaires-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+.horaires-table td:first-child {
+  font-weight: 600;
+  color: var(--color-text);
+}
+.horaires-table td:last-child {
+  text-align: right;
+  color: var(--color-text-muted);
+}
